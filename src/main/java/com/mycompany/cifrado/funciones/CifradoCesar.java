@@ -1,7 +1,5 @@
 package com.mycompany.cifrado.funciones;
 
-import static java.lang.Math.abs;
-
 public class CifradoCesar {
 
     public String encode(String texto, int k) {
