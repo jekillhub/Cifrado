@@ -2,7 +2,7 @@ package com.mycompany.cifrado.funciones;
 
 public class CifradoCesar {
 
-    public String encode(String texto, int k) {
+    public static String encode(String texto, int k) {
 
         StringBuilder codificado = new StringBuilder();
         int numLetraSC = 0;
@@ -20,7 +20,7 @@ public class CifradoCesar {
 
     }
 
-    public String decode(String texto, int k) {
+    public static String decode(String texto, int k) {
 
         StringBuilder decodificado = new StringBuilder();
         int numLetraSC = 0;

@@ -2,44 +2,49 @@ package com.mycompany.cifrado.funciones;
 
 public class CifradoVigenere {
     
-    int[][] tabla;
+    public static String encode(String texto, String clave){
     
-    public CifradoVigenere() {
+        StringBuilder codificado = new StringBuilder();
         
-        this.tabla = new int[26][26];
+        for(int i=0; i<texto.length();i++){
         
+            int letraTexto = (int) texto.charAt(i) - 97;
+            int letraClave = (int) clave.charAt(i) - 97;
+            int letraCD = (letraTexto + letraClave) % 26;
+            codificado.append(Character.toString((char) (letraCD + 97)));
+            
+        }
+        
+        return codificado.toString();
+    
     }
     
-    public void llenarMatriz(){
+    public static String decode(String texto, String clave){
     
-        for(int i=0;i<this.tabla.length;i++){
+        StringBuilder decodificado = new StringBuilder();
         
-            for(int j=0;j<this.tabla.length;j++){
+        for(int i=0; i<texto.length();i++){
+        
+            int letraTexto = (int) texto.charAt(i) - 97;
+            int letraClave = (int) clave.charAt(i) - 97;
+            int letraDC = 0;
             
-                this.tabla[i][j] = j%26;
+            if((letraTexto - letraClave) < 0){
+                
+                letraDC = (letraTexto - letraClave + 26) % 26;
+                
+            }
+            else{
+            
+                letraDC = (letraTexto - letraClave) % 26;
             
             }
-        
+            
+            decodificado.append(Character.toString((char) (letraDC + 97)));
+            
         }
         
-    } 
-    
-    public static String transformarCharToInt(String texto){
-    
-        StringBuilder sb = null;
-        
-        for (int i=0; i<texto.length();i++){
-            int num =texto.charAt(i);
-            sb.append(num); 
-        }
-        
-     return sb.toString();
-     
-    } 
-    
-    public void encode(){
-    
-        
+        return decodificado.toString();
     
     }
     
