@@ -11,6 +11,8 @@ public class CifradoVigenereTest {
     public void testEncode(){
     
         assertEquals("aolxd",CifradoVigenere.encode("paris", "loupl"));
+        assertEquals("priwr", CifradoVigenere.encode("arroz","paris"));
+        assertEquals("ayrzsci",CifradoVigenere.encode("jugazor", "relztor"));
     
     }
     
@@ -18,6 +20,9 @@ public class CifradoVigenereTest {
     public void testDecode(){
     
         assertEquals("paris",CifradoVigenere.decode("aolxd", "loupl"));
+        assertEquals("arroz", CifradoVigenere.decode("priwr","paris"));
+        assertEquals("jugazor",CifradoVigenere.decode("ayrzsci", "relztor"));
+        
     
     }
     

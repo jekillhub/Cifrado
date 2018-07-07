@@ -21,9 +21,6 @@ public class CifradoCesarTest {
         assertEquals("arroz", CifradoCesar.decode("duurc",3));
         assertEquals("pez", CifradoCesar.decode("shc", 3));
         assertEquals("cabra", CifradoCesar.decode("fdeud", 3));
-        
-        //Problemas
-        assertEquals("xxxx",CifradoCesar.decode("aaaa", 3));
         assertEquals("yyyy",CifradoCesar.decode("bbbb", 3));
         assertEquals("zzzz",CifradoCesar.decode("cccc", 3));
     

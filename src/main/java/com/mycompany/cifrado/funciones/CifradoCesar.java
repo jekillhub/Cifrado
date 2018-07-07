@@ -29,11 +29,11 @@ public class CifradoCesar {
         for (int i = 0; i < texto.length(); i++) {
 
             numLetraSC = ((int) texto.charAt(i)) - 97;
-            numLetraCD = (numLetraSC - k) % 26;
+            numLetraCD = (numLetraSC - k+ 26) % 26;
             decodificado.append(Character.toString((char) (numLetraCD + 97)));
            
         }
-
+        
         return decodificado.toString();
 
     }

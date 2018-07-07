@@ -8,9 +8,9 @@ public class CifradoVigenere {
         
         for(int i=0; i<texto.length();i++){
         
-            int letraTexto = (int) texto.charAt(i) - 97;
-            int letraClave = (int) clave.charAt(i) - 97;
-            int letraCD = (letraTexto + letraClave) % 26;
+            int letraTexto = (int) texto.charAt(i) - 97;            
+            int letraClave = (int) clave.charAt(i) - 97;            
+            int letraCD = (letraTexto + letraClave) % 26;           
             codificado.append(Character.toString((char) (letraCD + 97)));
             
         }
@@ -41,7 +41,7 @@ public class CifradoVigenere {
             }
             
             decodificado.append(Character.toString((char) (letraDC + 97)));
-            
+                        
         }
         
         return decodificado.toString();
